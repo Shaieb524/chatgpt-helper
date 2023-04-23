@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatGPTHelper.Service.DTOs
+namespace ChatGPTHelper.Service.Contracts.Models
 {
-    public class GenerateRequestDTO
+    public class CustomerRequestModel
     {
-        public string prompt { get; set; }
+        public string Message { get; set; }
     }
 }

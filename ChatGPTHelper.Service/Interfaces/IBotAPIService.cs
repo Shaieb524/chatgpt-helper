@@ -9,6 +9,6 @@ namespace ChatGPTHelper.Service.Interfaces
 {
     public interface IBotAPIService
     {
-        Task<List<string>> GenerateContent(GenerateRequestDTO input);
+        Task<List<string>> GenerateContent(GenerateContentDTO input);
     }
 }
