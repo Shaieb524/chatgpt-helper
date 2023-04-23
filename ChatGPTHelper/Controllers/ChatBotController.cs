@@ -6,20 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ChatGPTHelper.API.Controllers
 {
-    public class ChatBotHelperController : BaseController
+    public class ChatBotController : BaseController
     {
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
         private readonly IHelperProductSerivce _helperProductService;
 
-        public ChatBotHelperController(ILogger logger, IMapper mapper, IHelperProductSerivce helper)
+        public ChatBotController(ILogger<ChatBotController> logger, IMapper mapper, IHelperProductSerivce helper)
         {
             _logger = logger;
             _mapper = mapper;
             _helperProductService = helper;
         }
 
-        [HttpPost("prompt")]
+        [HttpPost("GenerateContent")]
         public async Task<ActionResult<dynamic>> GenerateChatBotContent([FromBody] GenerateContentRequestContract userInput)
         {
             var generateHelperInput = _mapper.Map<CustomerRequestModel>(userInput);
